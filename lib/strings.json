@@ -20,6 +20,11 @@
     "source": "منبع",
     "prLink": "https://github.com/yazdanctx/ez-ai-access"
   },
+  "dangerAlert": {
+    "title": "Title",
+    "paragraph": "Placeholder paragraph — replace this with your message."
+  },
+  "comingSoon": "به زودی",
   "tabs": {
     "dangerous": "پلتفرم های خطرناک",
     "safe": "پلتفرم های امن",

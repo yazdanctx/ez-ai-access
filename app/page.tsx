@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { TriangleAlert } from "lucide-react";
+import { cn } from "@/lib/utils";
 import strings from "@/lib/strings.json";
 
 export default function Home() {
@@ -59,17 +61,27 @@ export default function Home() {
               </TabsTrigger>
             </TabsList>
             <TabsContent value="dangerous" className="mt-4 space-y-4">
+              <div className="flex items-start gap-3 rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-sm">
+                <TriangleAlert className="mt-0.5 size-5 shrink-0 text-red-400" />
+                <div className="space-y-1">
+                  <p className="font-medium text-red-400">{strings.dangerAlert.title}</p>
+                  <p className="text-muted-foreground">
+                    {strings.dangerAlert.paragraph}
+                  </p>
+                </div>
+              </div>
               {entries.map((entry) => (
                 <Card key={entry.title}>
                   <CardHeader>
                     <div className="flex items-center gap-2">
                       <CardTitle>{entry.title}</CardTitle>
                       <span
-                        className={`text-xs px-1.5 py-0.5 rounded ${
+                        className={cn(
+                          "text-xs px-1.5 py-0.5 rounded",
                           entry.tested
                             ? "bg-green-900/50 text-green-400"
-                            : "bg-red-900/50 text-red-400"
-                        }`}
+                            : "bg-red-900/50 text-red-400",
+                        )}
                       >
                         {entry.tested
                           ? strings.home.tested
@@ -110,9 +122,21 @@ export default function Home() {
                 </Card>
               ))}
             </TabsContent>
-            <TabsContent value="safe" className="mt-4" />
-            <TabsContent value="free-models" className="mt-4" />
-            <TabsContent value="education" className="mt-4" />
+            <TabsContent value="safe" className="mt-4">
+              <div className="flex items-center justify-center rounded-lg border border-muted bg-muted/50 p-8 text-sm text-muted-foreground">
+                {strings.comingSoon}
+              </div>
+            </TabsContent>
+            <TabsContent value="free-models" className="mt-4">
+              <div className="flex items-center justify-center rounded-lg border border-muted bg-muted/50 p-8 text-sm text-muted-foreground">
+                {strings.comingSoon}
+              </div>
+            </TabsContent>
+            <TabsContent value="education" className="mt-4">
+              <div className="flex items-center justify-center rounded-lg border border-muted bg-muted/50 p-8 text-sm text-muted-foreground">
+                {strings.comingSoon}
+              </div>
+            </TabsContent>
           </Tabs>
         </div>
       </div>
