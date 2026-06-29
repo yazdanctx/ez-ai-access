@@ -21,6 +21,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check, CornerDownLeft, TriangleAlert, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import strings from "@/lib/strings.json";
+import ReactMarkdown from "react-markdown";
 
 export default async function Home() {
   const entries = await getAllEntries();
@@ -121,12 +122,8 @@ export default async function Home() {
                       </span>
                     </div>
                   </CardHeader>
-                  <CardContent className="text-sm leading-relaxed font-light text-right">
-                    {entry.content.split("\n\n").map((paragraph, i) => (
-                      <p key={i} className="mb-4 last:mb-0">
-                        {paragraph}
-                      </p>
-                    ))}
+                  <CardContent className="text-sm leading-relaxed font-light text-right [&_p]:mb-4 [&_p:last-child]:mb-0 [&_a]:text-blue-300 [&_a]:underline">
+                    <ReactMarkdown>{entry.content}</ReactMarkdown>
                   </CardContent>
                   <CardFooter className="gap-2 flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -197,12 +194,8 @@ export default async function Home() {
                       </span>
                     </div>
                   </CardHeader>
-                  <CardContent className="text-sm leading-relaxed font-light text-right">
-                    {entry.content.split("\n\n").map((paragraph, i) => (
-                      <p key={i} className="mb-4 last:mb-0">
-                        {paragraph}
-                      </p>
-                    ))}
+                  <CardContent className="text-sm leading-relaxed font-light text-right [&_p]:mb-4 [&_p:last-child]:mb-0 [&_a]:text-blue-300 [&_a]:underline">
+                    <ReactMarkdown>{entry.content}</ReactMarkdown>
                   </CardContent>
                   <CardFooter className="gap-2 flex items-center justify-between">
                     <div className="flex items-center gap-2">
