@@ -1,5 +1,5 @@
 ---
-title: alibabacloud
+title: alibabacloud 🇨🇳
 lastUpdated: 2026-06-28T00:00:00Z
 link: https://modelstudio.console.alibabacloud.com
 author: https://x.com/bookunt/status/2070916034895200274
